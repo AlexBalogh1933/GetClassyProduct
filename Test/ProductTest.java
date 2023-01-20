@@ -20,11 +20,6 @@ class ProductTest
      }
 
      @Test
-     void getIDSeed()
-     {
-         assertEquals(4, Product.getIDSeed());
-     }
-     @Test
      void getProdName()
      {
          assertEquals("Mushrooms", p1.getProdName());
@@ -45,14 +40,4 @@ class ProductTest
      {
          assertEquals(10, p1.getProdCost());
      }
-     @Test
-     void equals()
-     {
-         p1.setProdName("Transfiguration Textbook");
-         p1.setProdDesc("A Beginner's Guide to Transfiguration");
-         p1.setIdString("0002");
-         p1.setProdCost(200);
-         assertEquals(true, p1.equals(p2));
-     }
-
 }

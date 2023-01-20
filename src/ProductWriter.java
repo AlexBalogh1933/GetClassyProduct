@@ -12,10 +12,8 @@ public class ProductWriter
         String prodName;
         String prodDesc;
         double prodCost;
-        String prodCostST;
-        String stringProduct;
         boolean doContinue;
-        ArrayList<String> ProductList = new ArrayList<>();
+        ArrayList<Product> ProductList = new ArrayList<>();
 
         do
         {
@@ -24,11 +22,9 @@ public class ProductWriter
             prodDesc = SafeInput.getNonZeroLenString(in, "Input description");
             prodCost = SafeInput.getDouble(in, "Input cost");
 
-            prodCostST = Double.toString(prodCost);
+            Product productInput = new Product(prodName, prodDesc, idString, prodCost);
 
-            stringProduct = String.join(", ", idString, prodName, prodDesc, prodCostST);
-
-            ProductList.add(stringProduct);
+            ProductList.add(productInput);
 
             doContinue = SafeInput.getYNConfirm(in, "Do you want to continue");
 
@@ -41,9 +37,9 @@ public class ProductWriter
         fileName = SafeInput.getNonZeroLenString(in, "What do you want the file to be called");
         FileWriter writer = new FileWriter(fileName + ".txt");
 
-        for (String i : ProductList)
+        for (Product i : ProductList)
         {
-            writer.write(i);
+            writer.write(i.toCSVRecordMethod());
             writer.write("\n");
         }
         writer.close();

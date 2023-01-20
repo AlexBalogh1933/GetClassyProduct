@@ -17,9 +17,9 @@ public class ProductWriter
 
         do
         {
-            idString = SafeInput.getNonZeroLenString(in, "Enter Id");
             prodName = SafeInput.getNonZeroLenString(in, "Input product name");
             prodDesc = SafeInput.getNonZeroLenString(in, "Input description");
+            idString = SafeInput.getNonZeroLenString(in, "Enter Id");
             prodCost = SafeInput.getDouble(in, "Input cost");
 
             Product productInput = new Product(prodName, prodDesc, idString, prodCost);

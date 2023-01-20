@@ -1,0 +1,2 @@
+Mushrooms, From the Forbidden Forest, 00001, 10.0
+Bread, Made from fresh wheat, 00002, 5.0
